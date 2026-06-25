@@ -134,8 +134,10 @@ In this exercise you will:
 #### Reflection Questions
 
 1. **How do you pass a file name to a program using the `-i` and `-o` options?**
-2. **What are typical use cases for parameters versus flags? How do the differ from one another?**
+Mit `-i` und `-o` übergibt man Eingabe- und Ausgabedateien, z. B. `programm -i input.txt -o output.txt`.
 
+2. **What are typical use cases for parameters versus flags? How do the differ from one another?**
+ Parameter haben Werte (z. B. `-i file.txt`), Flags sind Schalter ohne Wert (z. B. `-v` für verbose).
 ---
 
 ### Task 3: Interactive Input with `scanf` & `fscanf`
@@ -187,6 +189,7 @@ In this exercise you will:
 #### Reflection Question
 
 * **Why is a run-to-completion (batch) approach often preferable to interactive input?**
+* Batch‑Ansatz (run-to-completion) ist oft besser, weil das Programm ohne Unterbrechungen vollständig durchläuft, was schneller, automatisierbar und weniger fehleranfällig ist als interaktive Eingaben
 
 ---
 
@@ -218,7 +221,8 @@ In this exercise you will:
 #### Reflection Question
 
 * **What is the difference between redirecting to stdin and explicitly opening a file with `fopen`?**
-
+* Bei der Umleitung in stdin liefert die Shell die Eingabe, und das Programm liest einfach daraus, ohne die Datei selbst zu öffnen.
+* Bei fopen öffnet das Programm die Datei selbst und hat dadurch mehr Kontrolle über das Einlesen und Fehlerbehandlung.
 ---
 
 ### Task 5: Caesar Cipher & Prototype Asymmetric XOR Cipher
@@ -408,6 +412,12 @@ In this exercise you will:
 #### Reflection Question
 
 * **Explain in your own words what the encryption and decryption processes are doing in both ciphers.**
+* Bei der Caesar-Verschlüsselung wird jeder Buchstabe im Alphabet um eine feste Anzahl von Stellen verschoben. Zur Entschlüsselung wird diese Verschiebung einfach in die entgegengesetzte Richtung durchgeführt, sodass der ursprüngliche Text wiederhergestellt wird.
+
+Bei der XOR-Verschlüsselung hingegen wird jedes Zeichen mit einem Schlüssel auf Bit-Ebene per XOR-Operation verknüpft, wodurch ein nicht lesbarer Wert entsteht. Da die XOR-Operation umkehrbar ist, kann derselbe Schlüssel erneut angewendet werden, um den Text zu entschlüsseln.
+
+Im Vergleich gilt XOR als sicherer, da die Verarbeitung auf Bit-Ebene komplexer ist und die Entschlüsselung nur möglich ist, wenn Sender und Empfänger denselben Schlüssel verwenden.
+
 
 ---
 
